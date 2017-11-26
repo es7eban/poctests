@@ -13,4 +13,10 @@
 
 Route::redirect('/', '/posts',301);
 
-Route::get('/posts','PostController@index');
+Route::get('/posts','PostController@index')->name('posts');
+
+Route::get('/posts/edit/{id}','PostController@edit')->name('postEdit');
+
+Route::post('/posts/update/{id}','PostController@update')->name('postUpdate');
+
+Route::get('/posts/delete/{id}','PostController@destroy')->name('postDelete');

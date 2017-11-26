@@ -16,7 +16,10 @@
                 <td>{{$post->user_id}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->text}}</td>
-                <td></td>
+                <td>
+                    <a class="btn btn-info" href="{{ route('postEdit',['id' => $post->id]) }}">edit</a>
+                    <a class="btn bg-danger" href="{{ route('postDelete',['id' => $post->id]) }}">delete</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

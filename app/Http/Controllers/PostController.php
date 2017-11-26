@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -58,7 +59,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrfail($id);
+        return view('post.edit',['post' => $post]);
     }
 
     /**
@@ -70,7 +72,17 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        /*$this->validate($request,[
+            'title' => 'required',
+            'text' => 'required'
+        ]);*/
+
+        $post->fill($request->all())->save();
+
+//        Session::flash('flash_message', 'Post successfully updated!');
+        return redirect('/posts');
     }
 
     /**
@@ -81,6 +93,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect('/posts');
     }
 }
