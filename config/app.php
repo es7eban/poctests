@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * CORS provider
+         */
+        Barryvdh\Cors\ServiceProvider::class,
+
     ],
 
     /*
