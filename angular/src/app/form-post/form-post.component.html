@@ -1,0 +1,21 @@
+<div class="col-lg-5">
+  <form #editForm="ngForm" (ngSubmit)="updatePost(editForm)">
+
+    <div class="form-group row">
+      <label for="user_id">User:</label>
+
+
+    </div>
+    <div class="form-group row">
+      <label for="title">Title:</label>
+      <input name="title" type="title" class="form-control" id="title" *ngIf="post" [(ngModel)]="post.title">
+    </div>
+    <div class="form-group row">
+      <label for="text">Text:</label>
+      <textarea name="text" id="text" class="form-control" cols="30" rows="10" *ngIf="post" [(ngModel)]="post.text"></textarea>
+    </div>
+    <div class="form-group row">
+      <button class="btn-success" type="submit">Update</button>
+    </div>
+  </form>
+</div>

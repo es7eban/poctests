@@ -1,29 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1>
-  {{title}}!
-</h1>
-<div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>user</th>
-        <th>Title</th>
-        <th>Text</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let post of data">
-        <td>{{post.user_id}}</td>
-        <td>{{post.title}}</td>
-        <td>{{post.text}}</td>
-        <td>
-          <button class="btn btn-info" (click)="editPost(post.id)">edit</button>
-          <button class="btn bg-danger" (click)="deletePost(post.id)">delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<router-outlet></router-outlet>
+
 
 
