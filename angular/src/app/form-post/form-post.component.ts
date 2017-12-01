@@ -1,8 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 
-import { ActivatedRoute } from "@angular/router";
-import {Observable} from "rxjs/Observable";
-
+import { ActivatedRoute,Router } from "@angular/router";
 import { PostsService } from "../services/posts.service";
 
 import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
@@ -19,7 +17,8 @@ export class FormPostComponent implements OnInit {
   idPost: string;
 
   constructor(private route: ActivatedRoute,
-              private postsService:PostsService) {
+              private postsService:PostsService,
+              private router: Router) {
     // console.log(listPost.data);
   }
 
@@ -35,6 +34,8 @@ export class FormPostComponent implements OnInit {
   }
 
   updatePost(form: NgForm) {
-    console.log(form.value);
+    console.log(JSON.stringify(form.value));
+    this.postsService.updatePost(this.idPost,form.value)
+      .subscribe(resp => this.router.navigate(['']));
   }
 }
