@@ -19,7 +19,11 @@ describe('ListPostComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create list posts', async(() => {
+    fixture.detectChanges();
+    fixture.whenStable().then(()=>{
+      fixture.detectChanges();
+      expect(component).toBeTruthy();
+    });
+  }));
 });
