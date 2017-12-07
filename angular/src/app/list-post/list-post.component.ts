@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs/Observable";
-import {Router} from "@angular/router";
+import {Observable} from 'rxjs/Observable';
 
-import { PostsService } from "../services/posts.service";
-import { Post } from "../classes/post";
+import { PostsService } from '../services/posts.service';
+import { Post } from '../classes/post';
 
 @Component({
   selector: 'app-list-post',
@@ -14,8 +13,7 @@ export class ListPostComponent implements OnInit {
   title = 'List Posts';
   posts: Observable<Post[]>;
 
-  constructor(private postsService:PostsService,
-              private router: Router) {
+  constructor(private postsService: PostsService) {
     console.log('load list');
   }
 
