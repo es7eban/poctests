@@ -13,7 +13,7 @@ export class AppPage {
     return element.all(by.css('tbody tr')).count();
   }
 
-  countButtonByText(text:string) {
+  countButtonByText(text: string) {
     return element.all(by.buttonText(text)).count();
   }
 

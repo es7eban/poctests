@@ -12,7 +12,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { FormPostComponent } from './form-post/form-post.component';
 import { ListPostComponent } from './list-post/list-post.component';
 import {PostsService} from './services/posts.service';
@@ -40,6 +39,3 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-.catch((err: any) => console.error(err));
